@@ -35,9 +35,9 @@ You First Need to Understand
 
 <Appear> 
   <div>Package Manager  <b>[ npm, yarn ]</b></div>
-  <div>Bundler  <b>[ browserify, webpack ]</b></div>
+  <div>Task Manager/Bundler  <b>[ <a href="http://slides.com/spfaffly/grunt-js/fullscreen" target="_blank">grunt</a>, browserify, <a href="https://slides.com/acanimal/webpack#/" target="_blank">webpack</a> ]</b></div>
   <div>Transpiler  <b>[ babel ]</b></div>
-  <div>Linter  <b>[ eslint ]</b></div>
+  <div>Linter  <b>[ <a href="http://slides.com/ianvanschooten/eslint#/" target="_blank">eslint</a> ]</b></div>
 </Appear>
 
 ---
@@ -73,6 +73,55 @@ class App extends React.Component {
   <div>Reusable</div>
   <div>Maintainable</div>
   <div>Testable</div>
+</Appear>
+
+---
+
+## Data Flow
+
+<Appear>
+  Unidirectional Data Flow
+</Appear>
+
+---
+
+```javascript
+class Mammal extends React.Component {
+  render = () => (
+    <div>
+      I am a Mammal
+      <Hands qty={2} />
+    </div>
+  )
+}
+
+class Hands extends React.Component {
+  render = () => (
+    <div>
+      I have {this.props.qty} hands
+    </div>
+  )
+}
+```
+
+---
+
+## Virtual DOM
+
+---
+
+Whats worse than having state in two places at once?
+
+<Appear>
+  <div><b>Having state in the DOM</b></div>
+  <div><b>Touching DOM is evil! </b></div>
+  <br/>
+  <div>
+    <div>It's Inconsistent</div>
+    <div>It's hard to test</div>
+    <div>Its brittle</div>
+    <div>Its Expensive</div>
+  </div>
 </Appear>
 
 ---
