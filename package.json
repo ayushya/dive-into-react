@@ -15,5 +15,8 @@
   "devDependencies": {
     "mdx-deck": "^1.6.7"
   },
-  "name": "dive-into-react"
+  "name": "dive-into-react",
+  "dependencies": {
+    "mdx-deck-live-code": "^1.0.0"
+  }
 }

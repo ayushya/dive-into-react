@@ -1,23 +1,121 @@
-import { Head } from 'mdx-deck'
-
-export { default as theme } from './theme'
+import {
+  Head,
+  Appear,
+  Image,
+} from 'mdx-deck';
+export { default as theme } from './theme';
+export { FullScreenCode } from 'mdx-deck/layouts';
+import { LiveCode } from 'mdx-deck-live-code';
 
 <Head>
-  <title>Presentation Title</title>
+  <title>Dive into React.js</title>
 </Head>
 
-# Hello
+# &lt;React/&gt;
 
 ---
 
-## Edit this file
+<Image src="./images/lol.gif" />
 
-To create your presentation
+---
 
-```notes
-- Create speaker notes in fenced code blocks
+# Seriously ?
+
+---
+
+<Image src="./images/seriously.gif" />
+
+---
+
+You First Need to Understand
+
+---
+
+### What is?
+
+<Appear> 
+  <div>Package Manager  <b>[ npm, yarn ]</b></div>
+  <div>Bundler  <b>[ browserify, webpack ]</b></div>
+  <div>Transpiler  <b>[ babel ]</b></div>
+  <div>Linter  <b>[ eslint ]</b></div>
+</Appear>
+
+---
+
+## Alright
+
+<Appear>
+Are you gonna React Today ?
+</Appear>
+
+---
+
+First Impression
+
+```javascript
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        Hello World
+      </div>
+    )
+  }
+}
 ```
 
 ---
 
-<https://github.com/jxnblk/mdx-deck>
+## EVERYTHING is Component
+
+<Appear>
+  <div>Composable</div>
+  <div>Reusable</div>
+  <div>Maintainable</div>
+  <div>Testable</div>
+</Appear>
+
+---
+
+<LiveCode
+  title="How to greet people ?"
+  size="large"
+  code="<p>Hello World!</p>"
+/>
+
+```notes
+
+class FilePicker extends React.Component {
+  constructor (props){
+    super(props);
+    this.state = {
+      file: null
+    }
+  }
+  pickFile (e) {
+    this.setState({file: e.target.files[0]})
+  }
+  render() {
+    return (
+      <div>
+        <input
+          type="file"
+          onChange={(e) => this.pickFile(e)}
+        />
+        {
+          this.state.file ?
+          <div>
+            <img
+              width="300"
+              height="300"
+              src={URL.createObjectURL(this.state.file)} />
+          </div> :
+          null
+        }
+      </div>
+    )
+  }
+}
+
+
+```
